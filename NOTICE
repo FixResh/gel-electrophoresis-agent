@@ -1,0 +1,22 @@
+Агент для анализа электрофореза
+Copyright 2026 [Ваше имя]
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This project includes third-party material:
+
+1. GelGenie segmentation model (GelGenie-Universal-FineTune-May-2024,
+   unet_dec_21_finetune_epoch_590.onnx)
+   https://huggingface.co/mattaq/GelGenie-Universal-FineTune-May-2024
+   Copyright 2024 University of Edinburgh. Licensed under the Apache License, Version 2.0.
+   Modification: weights converted from float32 to float16 (onnxconverter-common, keep_io_types=True).
+   File: claude_skill/gel-electrophoresis-analyzer/model/gelgenie_unet_fp16.onnx
+   Image preprocessing in analyze_gel.py follows python-gelgenie (https://github.com/mattaq31/GelGenie).
+
+2. Test gel images (test_gels/) and the overlays derived from them (examples/)
+   Aquilina M. et al., "Segmented Gel Electrophoresis Images used for Training GelGenie Models",
+   Zenodo, https://doi.org/10.5281/zenodo.13218469, licensed under CC BY 4.0.
+   Changes: two 16-bit TIFF images converted to 8-bit PNG; overlays are annotations produced by this project.
+
+3. Release archive chatgpt-gpt-files.zip may include onnxruntime wheels
+   (https://github.com/microsoft/onnxruntime), Copyright Microsoft Corporation, MIT License.
